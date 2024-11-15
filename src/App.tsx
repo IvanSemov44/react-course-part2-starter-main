@@ -1,4 +1,4 @@
-import PostList from './react-query/PostList';
+import PostList from "./react-query/PostList";
 
 function App() {
   return (
