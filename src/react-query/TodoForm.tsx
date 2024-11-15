@@ -19,7 +19,9 @@ const TodoForm = () => {
 
       //APPROACH 2: updating the data in the cache
       queryClient.setQueryData<Todo[]>(["todos"],
-        todos => [savedTodo, ...(todos || [])])
+        todos => [savedTodo, ...(todos || [])]);
+
+      if (ref.current) ref.current.value = "";
     }
   });
 
@@ -48,7 +50,12 @@ const TodoForm = () => {
           <input ref={ref} type="text" className="form-control" />
         </div>
         <div className="col">
-          <button className="btn btn-primary">Add</button>
+          <button
+            disabled={addTodo.isLoading}
+            className="btn btn-primary"
+          >
+            {addTodo.isLoading ? "Adding..." : "Add"}
+          </button>
         </div>
       </form>
     </>
