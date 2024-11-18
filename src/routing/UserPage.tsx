@@ -1,7 +1,8 @@
-import { Outlet } from 'react-router-dom'
-import UserList from './UserList'
+import { Outlet } from 'react-router-dom';
+import UserList from './UserList';
 
 const UserPage = () => {
+
     return (
         <div className="row">
             <div className="col">
